@@ -1,3 +1,6 @@
+# Migration Visualization
+This project will create a visualization for migration flow within the United States. The goal is that you will be able to get a sense of the flow of people from state to state and county to county. Stretch goals would be to be able to overlay this with other data such as voting records or other possibly relevant information to analyze patterns.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
