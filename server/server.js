@@ -1,13 +1,15 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
+const populateDatabase = require
+
 
 const PORT = 5000;
 
 app.use(express.static(`build`));
 
 app.use('/api/hi', (req, res) => {
-  axios.get('https://api.census.gov/data/2015/acs/flows?get=FULL1_NAME,FULL2_NAME,MOVEDIN,MOVEDNET,MOVEDOUT,GEOID2 st&for=county:*&in=state:27')
+  axios.get('https://api.census.gov/data/2015/acs/flows?get=FULL1_NAME,FULL2_NAME,MOVEDIN,MOVEDNET,MOVEDOUT,GEOID2&for=county:*&in=state:27')
     .then(response => {
 
       // let counties = {}
@@ -47,7 +49,7 @@ app.use('/api/hi', (req, res) => {
       //     }
       //   }
       // })
-      res.send(counties);
+      // res.send(counties);
       // console.log(inOut);
     })
     .catch(error => {
