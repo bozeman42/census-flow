@@ -30,10 +30,18 @@ class Map extends Component {
         if (countyElement) {
           if (data[county] > 0) {
             let percentage = Math.round(100*(data[county]/max));
+            if (percentage < 10) {
+              percentage = 10;
+            }
+            console.log(percentage);
             countyElement.setAttribute('fill',`RGB(100%,${100-percentage}%,${100-percentage}%)`);
             // countyElement.setAttribute('fill',`red`);
           } else if (data[county] < 0) {
             let percentage = Math.round(100*(data[county]/min));
+            if (percentage < 10) {
+              percentage = 10;
+            }
+            console.log(percentage);
             countyElement.setAttribute('fill',`RGB(${100-percentage}%,${100-percentage}%,100%)`);
             // countyElement.setAttribute('fill',`blue`);
           } else if (data[county] === 0) {
