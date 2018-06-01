@@ -12,7 +12,8 @@
     "pg": "^7.4.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-svg-loader": "^2.1.0"
   },
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"react-scripts start\" \"nodemon server/server.js\"",
