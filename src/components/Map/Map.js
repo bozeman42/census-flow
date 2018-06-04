@@ -25,23 +25,20 @@ class Map extends Component {
       console.log(`Max: ${max}\nMin: ${min}`);
       let total = 0;
       for (let county in data) {
-        total += data[county];
         let countyElement = mapSVG.getElementsByClassName(`c${county}`)[0];
         if (countyElement) {
           if (data[county] > 0) {
             let percentage = Math.round(100*(data[county]/max));
-            if (percentage < 10) {
-              percentage = 10;
+            if (percentage < 5) {
+              percentage = 5;
             }
-            console.log(percentage);
             countyElement.setAttribute('fill',`RGB(100%,${100-percentage}%,${100-percentage}%)`);
             // countyElement.setAttribute('fill',`red`);
           } else if (data[county] < 0) {
             let percentage = Math.round(100*(data[county]/min));
-            if (percentage < 10) {
-              percentage = 10;
+            if (percentage < 5) {
+              percentage = 5;
             }
-            console.log(percentage);
             countyElement.setAttribute('fill',`RGB(${100-percentage}%,${100-percentage}%,100%)`);
             // countyElement.setAttribute('fill',`blue`);
           } else if (data[county] === 0) {
@@ -51,10 +48,8 @@ class Map extends Component {
           
         }
       }
-      console.log('Net migration between MN and other states:',total);
     })
   }
-
 
   render() {
     return (
